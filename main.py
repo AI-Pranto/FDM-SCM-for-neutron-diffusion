@@ -6,7 +6,11 @@ from scipy.sparse import csr_matrix
 from scipy.sparse.linalg import spsolve
 from scipy.sparse.linalg import splu
 # from scipy.sparse.linalg import cg
-from collections import Iterable
+try:
+    # from python 3.10
+    from collections.abc import Iterable
+except ImportError:
+    from collections import Iterable
 import os
 import copy
 
